@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import AuthTest from "./AuthTest";
+import WidgetList from "./WidgetList";
+import AddWidget from "./AddWidget";
+import Header from "./components/header/Header";
+import Banner from "./widgets/Banner/Banner.js";
+import TrustedBySection from "./widgets/TrustedBySection/TrustedBySection.js";
+import FeaturesSection from "./widgets/FeaturesSection/FeaturesSection.js";
+import PricingTable from "./widgets/PricingTable/PricingTable.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Banner/>
+      <TrustedBySection/>
+      <FeaturesSection/>
+      <PricingTable/>
     </div>
   );
 }

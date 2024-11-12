@@ -1,0 +1,12 @@
+.sales-statistics {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .chart {
+    height: 150px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+  

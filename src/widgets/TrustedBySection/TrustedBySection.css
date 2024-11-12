@@ -1,0 +1,32 @@
+.trusted-by-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #fff;
+  }
+  
+  .trusted-by-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .brand-logo img {
+    height: 50px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  
+  .brand-logo img:hover {
+    filter: grayscale(0%);
+  }
+  

@@ -1,0 +1,96 @@
+.pricing-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .pricing-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .toggle-buttons {
+    margin-bottom: 1.5rem;
+  }
+  
+  .toggle-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .toggle-button.active {
+    background-color: #ff6b00;
+    color: #fff;
+  }
+  
+  .discount-text {
+    font-size: 0.9rem;
+    color: #ff6b00;
+  }
+  
+  .pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-plan {
+    flex: 1 1 calc(33.333% - 1rem);
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    max-width: 300px;
+  }
+  
+  .best-choice {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #ff6b00;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .plan-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .plan-price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .plan-features li {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .available {
+    color: #333;
+  }
+  
+  .unavailable {
+    color: #ccc;
+    text-decoration: line-through;
+  }
+  

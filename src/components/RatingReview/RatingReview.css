@@ -1,0 +1,11 @@
+.rating-review {
+    padding: 1rem;
+    background-color: #e6d6f9;
+    border-radius: 10px;
+  }
+  
+  .rating {
+    font-size: 2rem;
+    color: #ff6347;
+  }
+  
