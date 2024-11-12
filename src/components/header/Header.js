@@ -1,8 +1,11 @@
 // src/components/Header.js
 import React from "react";
 import "./Header.css";
+import { useHeader } from "./useHeader";
 
 function Header() {
+
+  const {handleGoogleLogin}=useHeader()
   return (
     <header className="header">
       <div className="logo">Coca</div>
@@ -13,7 +16,7 @@ function Header() {
         <a href="#blog">Blog</a>
         <a href="#resource">Resource</a>
       </nav>
-      <button className="sign-in-button">Sign In</button>
+      <button className="sign-in-button" onClick={handleGoogleLogin}>Sign In</button>
     </header>
   );
 }
