@@ -1,5 +1,5 @@
 import React from "react";
-import "./PricingTable.css";
+import style from "./PricingTable.module.scss";
 
 function PricingTable() {
   const plans = [
@@ -49,25 +49,25 @@ function PricingTable() {
   ];
 
   return (
-    <section className="pricing-section">
-      <h2 className="pricing-heading">Packages for your business</h2>
-      <div className="toggle-buttons">
-        <button className="toggle-button">Monthly</button>
-        <button className="toggle-button active">Annual</button>
-        <p className="discount-text">Annual - 2 months free 🎉</p>
+    <section className={style.pricing_section}>
+      <h2 className={style.pricing_heading}>Packages for your business</h2>
+      <div className={style.toggle_buttons}>
+        <button className={style.toggle_button}>Monthly</button>
+        <button className={`${style.toggle_button} ${style.active}`}>Annual</button>
+        <p className={style.discount_text}>Annual - 2 months free 🎉</p>
       </div>
-      <div className="pricing-table">
+      <div className={style.pricing_table}>
         {plans.map((plan, index) => (
-          <div key={index} className="pricing-plan" style={{ backgroundColor: plan.color }}>
-            {plan.bestChoice && <div className="best-choice">Best choice 😊</div>}
-            <h3 className="plan-name">{plan.name}</h3>
-            <p className="plan-price">{plan.price}</p>
-            <ul className="plan-features">
+          <div key={index} className={style.pricing_plan} style={{ backgroundColor: plan.color }}>
+            {plan.bestChoice && <div className={style.best_choice}>Best choice 😊</div>}
+            <h3 className={style.plan_name}>{plan.name}</h3>
+            <p className={style.plan_price}>{plan.price}</p>
+            <ul className={style.plan_features}>
               {plan.features.map((feature, idx) => (
-                <li key={idx} className="available">{feature} ✅</li>
+                <li key={idx} className={style.available}>{feature} ✅</li>
               ))}
               {plan.unavailable?.map((feature, idx) => (
-                <li key={idx} className="unavailable">{feature}</li>
+                <li key={idx} className={style.unavailable}>{feature}</li>
               ))}
             </ul>
           </div>

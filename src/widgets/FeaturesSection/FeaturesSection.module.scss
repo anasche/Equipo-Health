@@ -1,0 +1,97 @@
+$background_light: #f9f9f9;
+$background_white: #fff;
+$background_gray: #e5e5e5;
+$color_dark: #333;
+$color_light: #555;
+$color_primary: #ff6b00;
+$color_primary_hover: #e65a00;
+$border_color: #ccc;
+
+.features_section {
+  padding: 3rem 1rem;
+  background-color: $background_light;
+
+  .features_heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $color_dark;
+  }
+
+  .features_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .feature_item {
+      display: flex;
+      align-items: center;
+      background: $background_white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      gap: 1.5rem;
+
+      .feature_image {
+        img {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 10px;
+          background: $background_gray;
+        }
+      }
+
+      .feature_content {
+        flex: 1;
+
+        .feature_title {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: $color_dark;
+        }
+
+        .feature_description {
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+          color: $color_light;
+        }
+
+        .feature_buttons {
+          display: flex;
+          gap: 0.5rem;
+
+          .launch_demo_button,
+          .more_info_button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+
+            &.launch_demo_button {
+              background-color: $color_primary;
+              color: $background_white;
+
+              &:hover {
+                background-color: $color_primary_hover;
+              }
+            }
+
+            &.more_info_button {
+              background-color: $background_white;
+              color: $color_dark;
+              border: 1px solid $border_color;
+
+              &:hover {
+                background-color: #f2f2f2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

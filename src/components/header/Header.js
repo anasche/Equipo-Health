@@ -3,8 +3,11 @@
 
 import React from "react";
 import styles from "./header.module.scss";
+import { useHeader } from "./useHeader";
 
 function Header() {
+
+  const {handleGoogleLogin}=useHeader()
   return (
     <header className={styles.header}>
       <div className={styles.container}>

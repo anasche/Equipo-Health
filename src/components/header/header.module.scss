@@ -1,0 +1,53 @@
+.header {
+    padding: 12px 0;
+}
+.container {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+.logo {
+    aspect-ratio: 100/50;
+    width: 100px;
+    background-color: #000;
+    border-radius: 10px;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    &_item {
+        padding: 10px 15px;
+        border-radius: 30px;
+        line-height: 1.2;
+        background-color: #f1f1f1;
+        color: #000;
+        display: inline-block;
+        text-decoration: none;
+        &.active {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+.signin {
+    
+    padding: 10px 15px;
+    border-radius: 30px;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid orange;
+    color: orange;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+}

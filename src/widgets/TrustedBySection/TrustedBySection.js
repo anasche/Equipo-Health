@@ -1,5 +1,5 @@
 import React from "react";
-import "./TrustedBySection.css";
+import style from "./TrustedBySection.module.scss";
 
 function TrustedBySection() {
   const brands = [
@@ -12,11 +12,11 @@ function TrustedBySection() {
   ];
 
   return (
-    <section className="trusted-by-section">
-      <h2 className="trusted-by-heading">
+    <section className={style.trusted_by_section}>
+      <h2 className={style.trusted_by_heading}>
         Trusted by over 50 thousand restaurants in 10+ countries
       </h2>
-      <div className="brand-logos">
+      <div className={style.brand_logos}>
         {brands.map((brand) => (
           <div key={brand.id} className="brand-logo">
             <img src={brand.logo} alt={brand.name} />

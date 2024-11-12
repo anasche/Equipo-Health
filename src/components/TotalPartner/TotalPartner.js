@@ -1,10 +1,10 @@
 // src/components/TotalPartner.js
 import React from "react";
-import "./TotalPartner.css";
+import style from "./TotalPartner.module.scss";
 
 function TotalPartner() {
   return (
-    <div className="total-partner">
+    <div className={style.total_partner}>
       <h3>Total Partner</h3>
       <p>50 thousands</p>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./FeaturesSection.css";
+import style from "./FeaturesSection.module.scss";
 
 function FeaturesSection() {
   const features = [
@@ -27,20 +27,22 @@ function FeaturesSection() {
   ];
 
   return (
-    <section className="features-section">
-      <h2 className="features-heading">Complementary features for your business needs</h2>
-      <div className="features-container">
+    <section className={style.features_section}>
+      <h2 className={style.features_heading}>
+        Complementary features for your business needs
+      </h2>
+      <div className={style.features_container}>
         {features.map((feature) => (
-          <div key={feature.id} className="feature-item">
-            <div className="feature-image">
+          <div key={feature.id} className={style.feature_item}>
+            <div className={style.feature_image}>
               <img src={feature.image} alt={feature.title} />
             </div>
-            <div className="feature-content">
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
-              <div className="feature-buttons">
-                <button className="launch-demo-button">Launch Demo</button>
-                <button className="more-info-button">More Info</button>
+            <div className={style.feature_content}>
+              <h3 className={style.feature_title}>{feature.title}</h3>
+              <p className={style.feature_description}>{feature.description}</p>
+              <div className={style.feature_buttons}>
+                <button className={style.launch_demo_button}>Launch Demo</button>
+                <button className={style.more_info_button}>More Info</button>
               </div>
             </div>
           </div>
