@@ -11,7 +11,9 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo}>Coca</div>
+        <div className={styles.logo}>
+        <img src="/logo-homepage.svg" alt="Company Logo" className={styles.logo_img} />
+        </div>
         <nav className={styles.nav}>
           <a className={`${styles.nav_item} ${styles.active}`} href="#home">Home</a>
           <a className={`${styles.nav_item}`} href="#features">Features</a>

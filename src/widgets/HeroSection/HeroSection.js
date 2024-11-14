@@ -1,6 +1,5 @@
 // src/components/HeroSection.js
 import React from "react";
-import "./HeroSection.css";
 import styles from "./heroSection.module.scss";
 import HeroFirstSection from "../../components/HeroFirstSection/HeroFirstSection";
 import SalesStatistics from "../../components/SalesStatistics/SalesStatistics";

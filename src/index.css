@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ttl-64 {
+  font-size: 30px;
+  font-weight: 500;
+  @media (min-height: 1200) {
+    font-size: 50px;
+  }
+  @media (min-height: 1200) {
+    font-size: 58px;
+  }
+  @media (min-height: 1200) {
+    font-size: 64px;
+  }
+}

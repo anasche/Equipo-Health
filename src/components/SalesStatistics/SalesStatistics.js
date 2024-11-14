@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -9,23 +9,25 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import { doc, getDoc } from 'firebase/firestore';
+import { firestore } from '../../firebase';
 
 // Register the components
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS?.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const SalesStatistics = () => {
     // Data for the chart
-    const data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-        datasets: [
-            {
-                label: 'Sales',
-                data: [800, 1200, 2500, 1500, 1600, 2431, 1200, 1000, 2300, 1500],
-                backgroundColor: 'rgba(66, 133, 244, 0.6)', // Light blue color similar to your chart
-                borderRadius: 10,
-            },
-        ],
-    };
+    // const data = {
+    //     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    //     datasets: [
+    //         {
+    //             label: 'Sales',
+    //             data: [800, 1200, 2500, 1500, 1600, 2431, 1200, 1000, 2300, 1500],
+    //             backgroundColor: 'rgba(66, 133, 244, 0.6)', // Light blue color similar to your chart
+    //             borderRadius: 10,
+    //         },
+    //     ],
+    // };
 
     // Configuration options for the chart
     const options = {
@@ -51,6 +53,30 @@ const SalesStatistics = () => {
             },
         },
     };
+
+    const [data, setdata] = useState('')
+
+    useEffect(() => {
+        const fetchBannerData = async () => {
+          try {
+            const docRef = doc(firestore, "charts", "salesChart");
+            const docSnap = await getDoc(docRef);
+
+    
+            if (docSnap.exists()) {
+                setdata(docSnap.data());
+            } else {
+              console.log("No such document!");
+            }
+          } catch (error) {
+            console.error("Error fetching banner data:", error);
+          }
+        };
+    
+        fetchBannerData();
+    
+      }, []);
+      console.log(data,"hhhhhh")
 
     return (
         <div
@@ -89,7 +115,7 @@ const SalesStatistics = () => {
                 <h3 style={{ margin: 0, fontSize: '18px', color: '#333' }}>Sales Statistics</h3>
             </div>
             <div style={{ position: 'relative', width: '100%', height: 'calc(100% - 40px)' }}>
-                <Bar data={data} options={options} />
+               {data? <Bar data={data} options={options} />:"loading.."}
             </div>
         </div>
     );

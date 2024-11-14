@@ -1,32 +1,40 @@
 .trusted_by_section {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: #fff;
-  }
-  
-  .trusted_by_heading {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .brand_logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .brand-logo img {
-    height: 50px;
-    max-width: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-  
-  .brand-logo img:hover {
-    filter: grayscale(0%);
-  }
-  
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #fff;
+}
+
+.trusted_by_heading {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-bottom: 20px;
+}
+
+.brand_logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.logo_item {
+  width: 160px;
+  aspect-ratio: 160/79;
+  max-width: 16.66%;
+
+}
+.brand-logo img {
+  height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.brand-logo img:hover {
+  filter: grayscale(0%);
+}
+

@@ -1,0 +1,89 @@
+.ease-in-the-hand {
+  padding: 2rem;
+
+  .content {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  .advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+
+    .advantage-item {
+      text-align: center;
+
+      img {
+        width: 50px;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .testimonial-card {
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: #333;
+
+      .quote {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .person-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .person-info {
+          h5 {
+            margin: 0;
+            font-size: 1rem;
+          }
+
+          p {
+            margin: 0;
+            color: gray;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

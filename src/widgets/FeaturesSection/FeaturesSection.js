@@ -1,38 +1,116 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./FeaturesSection.module.scss";
+import { fetchDocument } from "../../services/firebaseService";
+import { doc, setDoc } from "firebase/firestore";
+import { firestore } from "../../firebase";
 
 function FeaturesSection() {
-  const features = [
-    {
-      id: 1,
-      title: "Dashboard to monitor your business sales from anywhere",
-      description:
-        "Dashboard provides in-depth insight into the performance menu items. You can see popular and unsold menus, helping you to monitor your restaurant business sales.",
-      image: "path-to-dashboard-image.png",
-    },
-    {
-      id: 2,
-      title: "Easier and better Desk Management",
-      description:
-        "Desk management becomes smoother with interactive table visualizations. You can manage orders, allocate tables and maximize restaurant capacity.",
-      image: "path-to-desk-management-image.png",
-    },
-    {
-      id: 3,
-      title: "More efficient customer recording and monitoring",
-      description:
-        "Monitor order records to tailor orders to customer preferences, such as options to add or remove ingredients for a more personalized experience and better service.",
-      image: "path-to-customer-recording-image.png",
-    },
-  ];
+  const [features, setFeatures] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFeaturesData = async () => {
+      try {
+        // Fetch the document that contains the features
+        const data = await fetchDocument("features", "features"); // Adjust the docId if necessary
+        setFeatures(data?.features || []); // Assuming the document contains an array of features
+        setLoading(false);
+      } catch (err) {
+        setError("Error fetching features data");
+        setLoading(false);
+      }
+    };
+
+    fetchFeaturesData();
+
+    // const addFeaturesData = async () => {
+    //     const data = [
+    //         {
+    //           "id": "1",
+    //           "name": "General",
+    //           "questions": [
+    //             {
+    //               "id": "q1",
+    //               "question": "What are the common features in the Coca POS system?",
+    //               "answer": "Common features in a POS system include order management, payment integration, stock management, sales reporting, data analysis, table management (in restaurants), and customer support."
+    //             },
+    //             {
+    //               "id": "q2",
+    //               "question": "How does Coca POS help in managing stock?",
+    //               "answer": "Coca POS helps track inventory in real-time, reduce stock wastage, and provide alerts for low inventory."
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": "2",
+    //           "name": "Transactions",
+    //           "questions": [
+    //             {
+    //               "id": "q3",
+    //               "question": "Can the Coca POS application be integrated with other systems?",
+    //               "answer": "Yes, Coca POS can integrate with accounting, CRM, and ERP systems for seamless data synchronization."
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": "3",
+    //           "name": "Payment",
+    //           "questions": [
+    //             {
+    //               "id": "q1",
+    //               "question": "What are the common features in the Coca POS system?",
+    //               "answer": "Common features in a POS system include order management, payment integration, stock management, sales reporting, data analysis, table management (in restaurants), and customer support."
+    //             },
+    //             {
+    //               "id": "q2",
+    //               "question": "How does Coca POS help in managing stock?",
+    //               "answer": "Coca POS helps track inventory in real-time, reduce stock wastage, and provide alerts for low inventory."
+    //             }
+    //           ]
+    //         },
+    //         {
+    //           "id": "4",
+    //           "name": "Others",
+    //           "questions": [
+    //             {
+    //               "id": "q3",
+    //               "question": "Can the Coca POS application be integrated with other systems?",
+    //               "answer": "Yes, Coca POS can integrate with accounting, CRM, and ERP systems for seamless data synchronization."
+    //             }
+    //           ]
+    //         }
+    //       ]
+        
+      
+    //     try {
+    //       // Reference to Firestore document
+    //       const docRef = doc(firestore, "faq", "faq");
+      
+    //       // Add data as an array to the Firestore document
+    //       await setDoc(docRef, { faq: data });
+      
+    //       console.log("Features data added successfully!");
+    //     } catch (error) {
+    //       console.error("Error adding features data:", error);
+    //     }
+    //   };
+    //   addFeaturesData()
+
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
 
   return (
     <section className={style.features_section}>
-      <h2 className={style.features_heading}>
+        <div className="container">
+      <h2 className={`ttl-64 ${style.features_heading}`}>
         Complementary features for your business needs
       </h2>
       <div className={style.features_container}>
-        {features.map((feature) => (
+        {features?.map((feature) => (
           <div key={feature.id} className={style.feature_item}>
             <div className={style.feature_image}>
               <img src={feature.image} alt={feature.title} />
@@ -48,6 +126,8 @@ function FeaturesSection() {
           </div>
         ))}
       </div>
+
+        </div>
     </section>
   );
 }

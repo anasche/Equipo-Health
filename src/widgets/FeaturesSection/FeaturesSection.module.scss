@@ -6,16 +6,21 @@ $color_light: #555;
 $color_primary: #ff6b00;
 $color_primary_hover: #e65a00;
 $border_color: #ccc;
-
+:global(.container) {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
 .features_section {
   padding: 3rem 1rem;
   background-color: $background_light;
 
   .features_heading {
-    text-align: center;
-    font-size: 2rem;
+    text-align: left;
     margin-bottom: 2rem;
     color: $color_dark;
+    max-width: 806px;
   }
 
   .features_container {
@@ -32,12 +37,19 @@ $border_color: #ccc;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       gap: 1.5rem;
 
+
       .feature_image {
+        aspect-ratio: 468/332;
+        position: relative;
+        width: 45%;
+        border: 5px solid #000;
+        border-radius: 10px;
+        overflow: hidden;
         img {
-          width: 120px;
-          height: 120px;
+          width: 100%;
+          height: 100%;
+          position: absolute;
           object-fit: cover;
-          border-radius: 10px;
           background: $background_gray;
         }
       }
@@ -92,6 +104,21 @@ $border_color: #ccc;
           }
         }
       }
+    }
+  }
+}
+:global{
+  .ttl-64 {
+    font-size: 30px;
+    font-weight: 500;
+    @media (min-width: 992px) {
+      font-size: 50px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 58px;
+    }
+    @media (min-width: 1400px) {
+      font-size: 64px;
     }
   }
 }

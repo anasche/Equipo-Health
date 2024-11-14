@@ -13,7 +13,7 @@ function WidgetList() {
         const widgetsRef = collection(firestore, "widgets");
         const q = query(widgetsRef, orderBy("createdAt", "desc"));
         const querySnapshot = await getDocs(q);
-        const widgetData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const widgetData = querySnapshot.docs?.map(doc => ({ id: doc.id, ...doc.data() }));
         setWidgets(widgetData);
       } catch (error) {
         console.error("Error fetching widgets:", error);
@@ -27,7 +27,7 @@ function WidgetList() {
     <div>
       <h2>Widget List</h2>
       <ul>
-        {widgets.map(widget => (
+        {widgets?.map(widget => (
           <li key={widget.id}>
             <h3>{widget.name}</h3>
             <p>{widget.description}</p>

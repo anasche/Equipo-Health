@@ -1,15 +1,33 @@
 // src/components/HeroSection.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from  "./HeroFirstSection.module.scss";
+import { fetchDocument } from "../../services/firebaseService";
+
 
 function HeroFirstSection() {
-  return (
+  const [bannerData, setBannerData] = useState(null);
+
+  useEffect(() => {
+    const getBannerData = async () => {
+      try {
+        const data = await fetchDocument("homepage", "banner");
+        setBannerData(data);
+      } catch (error) {
+        console.error("Error fetching banner data:", error);
+      }
+    };
+
+    getBannerData();
+  }, []);
+
+
+    return (
     <section >
-      <div >
-        <p>All the features you need in one App for any kind of your business 🚀</p>
-        <h1>Manage your restaurant business so advanced</h1>
+    {bannerData ?  <div >
+        <p>{bannerData?.subtitle}</p>
+        <h1>{bannerData?.title}</h1>
         <button className={styles.ctabutton}>Get Started for Free →</button>
-      </div>
+      </div>: "loading.."}
       {/* <div >
         <img src="https://via.placeholder.com/500" alt="Tablet illustration" />
       </div> */}

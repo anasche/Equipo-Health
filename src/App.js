@@ -1,10 +1,12 @@
 // src/App.js
 import React from "react";
 import Header from "./components/header/Header";
-import TrustedBySection from "./widgets/TrustedBySection/TrustedBySection.js";
-import FeaturesSection from "./widgets/FeaturesSection/FeaturesSection.js";
-import PricingTable from "./widgets/PricingTable/PricingTable.js";
-import HeroSection from "./widgets/HeroSection/HeroSection.js";
+import TrustedBySection from "./widgets/TrustedBySection";
+import FeaturesSection from "./widgets/FeaturesSection";
+import PricingTable from "./widgets/PricingTable";
+import HeroSection from "./widgets/HeroSection";
+import EaseInHand from "./widgets/EaseInHand"
+import FAQ from "./widgets/Faq";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <TrustedBySection/>
       <FeaturesSection/>
       <PricingTable/>
+      <EaseInHand/>
+      <FAQ/>
     </div>
   );
 }

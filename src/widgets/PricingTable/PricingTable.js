@@ -57,16 +57,18 @@ function PricingTable() {
         <p className={style.discount_text}>Annual - 2 months free 🎉</p>
       </div>
       <div className={style.pricing_table}>
-        {plans.map((plan, index) => (
+
+        <div>jii</div>
+        {plans?.map((plan, index) => (
           <div key={index} className={style.pricing_plan} style={{ backgroundColor: plan.color }}>
             {plan.bestChoice && <div className={style.best_choice}>Best choice 😊</div>}
             <h3 className={style.plan_name}>{plan.name}</h3>
             <p className={style.plan_price}>{plan.price}</p>
             <ul className={style.plan_features}>
-              {plan.features.map((feature, idx) => (
+              {plan?.features.map((feature, idx) => (
                 <li key={idx} className={style.available}>{feature} ✅</li>
               ))}
-              {plan.unavailable?.map((feature, idx) => (
+              {plan?.unavailable?.map((feature, idx) => (
                 <li key={idx} className={style.unavailable}>{feature}</li>
               ))}
             </ul>
