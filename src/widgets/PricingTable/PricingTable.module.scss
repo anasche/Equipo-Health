@@ -1,92 +1,104 @@
 .pricing_section {
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 1rem 140px;
   background-color: #f9f9f9;
 
   .pricing_heading {
-    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 64px;
+    }
     margin-bottom: 1rem;
-  }
+    .billing_toggle_container {
+      display: flex;
+      flex-direction: column;
+      .toggle_buttons {
+        margin-bottom: 1.5rem;
 
-  .toggle_buttons {
-    margin-bottom: 1.5rem;
+        .toggle_button {
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 20px;
+          background-color: #fff;
+          color: #333;
+          cursor: pointer;
+          margin: 0 0.5rem;
+          font-size: 1rem;
 
-    .toggle_button {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 20px;
-      background-color: #fff;
-      color: #333;
-      cursor: pointer;
-      margin: 0 0.5rem;
-      font-size: 1rem;
-
-      &.active {
-        background-color: #ff6b00;
-        color: #fff;
+          &.active {
+            background-color: #ff6b00;
+            color: #fff;
+          }
+        }
       }
     }
   }
-
-  .discount_text {
-    font-size: 0.9rem;
-    color: #ff6b00;
-  }
-
-  .pricing_table {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    .pricing_plan {
-      flex: 1 1 calc(33.333% - 1rem);
-      padding: 1.5rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: relative;
-      max-width: 300px;
-
-      .best_choice {
-        position: absolute;
-        top: -15px;
-        right: -15px;
-        background-color: #ff6b00;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
+  .feature_table {
+    width: 100%;
+    table {
+      border-collapse: separate;
+      border-spacing: 20px 0;
+      td {
+        text-align: center; /* Horizontal centering */
+        vertical-align: middle;
+      }
+      thead {
+        /* Second column (Basic) */
+        th {
+          text-align: center;
+          font-size: 24px;
+          padding: 24px;
+          border-radius: 10px;
+        }
+        th:nth-child(2) {
+          color: #38715b;
+          background-color: rgba(56, 113, 91, 0.15);
+        }
+        /* Third column (Business) */
+        th:nth-child(3) {
+          color: #3871a5;
+          background-color: rgba(56, 113, 165, 0.15);
+        }
+        /* Fourth column (Enterprise) */
+        th:nth-child(4) {
+          color: #7256af;
+          background-color: rgba(114, 86, 175, 0.15);
+        }
       }
 
-      .plan_name {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .plan_price {
-        font-size: 1.2rem;
-        color: #333;
-        margin-bottom: 1rem;
-      }
-
-      .plan_features {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-          margin: 0.5rem 0;
-          font-size: 0.9rem;
-
-          &.available {
-            color: #333;
+      tbody {
+        td {
+        }
+        td:nth-child(1) {
+          text-align: start;
+        }
+        tr:nth-child(1) {
+          td {
+            color: black;
           }
+        }
+        /* Second column (Basic) */
+        td:nth-child(2) {
+          color: #38715b;
+          background-color: rgba(56, 113, 91, 0.05);
+          margin-right: 30px;
+        }
+        /* Third column (Business) */
+        td:nth-child(3) {
+          color: #3871a5;
+          background-color: rgba(56, 113, 165, 0.05);
+        }
+        /* Fourth column (Enterprise) */
+        td:nth-child(4) {
+          color: #7256af;
+          background-color: rgba(114, 86, 175, 0.05);
+        }
 
-          &.unavailable {
-            color: #ccc;
-            text-decoration: line-through;
+        .table_price_box {
+          .price {
+            font-size: 48px;
+            font-weight: 500;
           }
         }
       }
