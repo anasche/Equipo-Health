@@ -4,28 +4,29 @@ import styles from  "./HeroFirstSection.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
 
 
-function HeroFirstSection() {
-  const [bannerData, setBannerData] = useState(null);
+function HeroFirstSection({data}) {
+  // console.log(data,"hhhhhhrrrrr")
+  // const [bannerData, setBannerData] = useState(null);
 
-  useEffect(() => {
-    const getBannerData = async () => {
-      try {
-        const data = await fetchDocument("homepage", "banner");
-        setBannerData(data);
-      } catch (error) {
-        console.error("Error fetching banner data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const getBannerData = async () => {
+  //     try {
+  //       const data = await fetchDocument("homepage", "banner");
+  //       setBannerData(data);
+  //     } catch (error) {
+  //       console.error("Error fetching banner data:", error);
+  //     }
+  //   };
 
-    getBannerData();
-  }, []);
+  //   getBannerData();
+  // }, []);
 
 
     return (
     <section >
-    {bannerData ?  <div >
-        <p>{bannerData?.subtitle}</p>
-        <h1>{bannerData?.title}</h1>
+    {data ?  <div >
+        <p>{data?.subtitle}</p>
+        <h1>{data?.title}</h1>
         <button className={styles.ctabutton}>Get Started for Free →</button>
       </div>: "loading.."}
       {/* <div >

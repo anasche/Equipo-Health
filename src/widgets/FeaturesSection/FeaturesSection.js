@@ -25,70 +25,51 @@ function FeaturesSection() {
     fetchFeaturesData();
 
     // const addFeaturesData = async () => {
-    //     const data = [
-    //         {
-    //           "id": "1",
-    //           "name": "General",
-    //           "questions": [
-    //             {
-    //               "id": "q1",
-    //               "question": "What are the common features in the Coca POS system?",
-    //               "answer": "Common features in a POS system include order management, payment integration, stock management, sales reporting, data analysis, table management (in restaurants), and customer support."
-    //             },
-    //             {
-    //               "id": "q2",
-    //               "question": "How does Coca POS help in managing stock?",
-    //               "answer": "Coca POS helps track inventory in real-time, reduce stock wastage, and provide alerts for low inventory."
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           "id": "2",
-    //           "name": "Transactions",
-    //           "questions": [
-    //             {
-    //               "id": "q3",
-    //               "question": "Can the Coca POS application be integrated with other systems?",
-    //               "answer": "Yes, Coca POS can integrate with accounting, CRM, and ERP systems for seamless data synchronization."
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           "id": "3",
-    //           "name": "Payment",
-    //           "questions": [
-    //             {
-    //               "id": "q1",
-    //               "question": "What are the common features in the Coca POS system?",
-    //               "answer": "Common features in a POS system include order management, payment integration, stock management, sales reporting, data analysis, table management (in restaurants), and customer support."
-    //             },
-    //             {
-    //               "id": "q2",
-    //               "question": "How does Coca POS help in managing stock?",
-    //               "answer": "Coca POS helps track inventory in real-time, reduce stock wastage, and provide alerts for low inventory."
-    //             }
-    //           ]
-    //         },
-    //         {
-    //           "id": "4",
-    //           "name": "Others",
-    //           "questions": [
-    //             {
-    //               "id": "q3",
-    //               "question": "Can the Coca POS application be integrated with other systems?",
-    //               "answer": "Yes, Coca POS can integrate with accounting, CRM, and ERP systems for seamless data synchronization."
-    //             }
-    //           ]
-    //         }
-    //       ]
+    //   const data= {
+    //     title: "Manage your restaurant business so advanced",
+    //     subtitle: "All the features you need in one App for any kind of your business 🚀",
+    //     saleStatistic: {
+    //           labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    //           datasets: [
+    //               {
+    //                   label: 'Sales',
+    //                   data: [800, 1200, 2500, 1500, 1600, 2431, 1200, 1000, 2300, 1500],
+    //                   backgroundColor: 'rgba(66, 133, 244, 0.6)', // Light blue color similar to your chart
+    //                   borderRadius: 10,
+    //               },
+    //           ],
+    //     },
+      
+    //     reviewSection: {
+    //       count:"4.9",
+    //       title:"Reviews of some of our app restaurant industry companies."
+    //     },
+    //     totalPartner: {
+    //       count:"50 thousands"
+    //     },
+    //     deliverSection: [
+    //           {
+    //             name: "Patrick Fernandes",
+    //             review: "“Deliver a better customer experience and increase their operational efficiency.”",
+    //             designation: 'CEO at Burger King',
+    //             profileImage: "john-doe.jpg",
+    //           },
+    //           {
+    //             name: "Jane Smith",
+    //             review: "“Amazing features and great support team. My business has seen exponential growth!”",
+    //             designation: 'CEO at Burger King',
+    //             profileImage: "jane-smith.jpg",
+    //           },
+    //         ],
+    //   }
         
       
     //     try {
     //       // Reference to Firestore document
-    //       const docRef = doc(firestore, "faq", "faq");
+    //       const docRef = doc(firestore, "banner", "banner");
       
     //       // Add data as an array to the Firestore document
-    //       await setDoc(docRef, { faq: data });
+    //       await setDoc(docRef, { banner: data });
       
     //       console.log("Features data added successfully!");
     //     } catch (error) {

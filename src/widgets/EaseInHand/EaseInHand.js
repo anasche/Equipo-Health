@@ -31,7 +31,6 @@ const EaseInHand = () => {
     return <p>Loading...</p>; // Handle loading state
 
   }
-  console.log(data,"gggggg")
 
   const { title, description, advantages, testimonials } = data;
 

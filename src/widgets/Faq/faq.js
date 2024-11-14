@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import { Form, InputGroup, Button, Spinner, Alert } from "react-bootstrap";
-import "./faq.module.scss";
+import styles from "./faq.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
 
 const FAQ = () => {
@@ -13,13 +13,12 @@ const FAQ = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch the document that contains the features
-        const faqData = await fetchDocument("faq", "faq"); // Adjust the docId if necessary
-        setData(faqData?.faq || []); // Assuming the document contains an array of features
+        const faqData = await fetchDocument("faq", "faq");
+        setData(faqData?.faq || []);
         setActiveCategory(faqData?.faq[0]?.id);
         setLoading(false);
       } catch (err) {
-        setError("Error fetching ease in section data");
+        setError("Error fetching FAQ data");
         setLoading(false);
       }
     };
@@ -29,7 +28,7 @@ const FAQ = () => {
 
   if (loading) {
     return (
-      <div className="faq-loading">
+      <div className={styles["faq-loading"]}>
         <Spinner animation="border" role="status" />
       </div>
     );
@@ -37,35 +36,35 @@ const FAQ = () => {
 
   if (error) {
     return (
-      <div className="faq-error">
+      <div className={styles["faq-error"]}>
         <Alert variant="danger">{error}</Alert>
       </div>
     );
   }
 
   return (
-    <div className="faq-section">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
+    <div className={styles["faq-section"]}>
+      <h2 className={styles["faq-title"]}>Frequently Asked Questions</h2>
 
-      <InputGroup className="mb-4 faq-search">
+      <InputGroup className={`mb-4 ${styles["faq-search"]}`}>
         <Form.Control
           placeholder="Type your question here"
           aria-label="Search FAQs"
-          className="faq-search-input"
+          className={styles["faq-search-input"]}
         />
-        <Button variant="outline-secondary" className="faq-search-btn">
+        <Button variant="outline-secondary" className={styles["faq-search-btn"]}>
           Search
         </Button>
       </InputGroup>
 
-      <div className="faq-content">
+      <div className={styles["faq-content"]}>
         {/* Categories */}
-        <div className="faq-categories">
+        <div className={styles["faq-categories"]}>
           {data.map((category) => (
             <Button
               key={category.id}
-              className={`faq-category-btn ${
-                activeCategory === category.id ? "active" : ""
+              className={`${styles["faq-category-btn"]} ${
+                activeCategory === category.id ? styles.active : ""
               }`}
               onClick={() => setActiveCategory(category.id)}
             >
@@ -75,7 +74,7 @@ const FAQ = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="faq-questions">
+        <div className={styles["faq-questions"]}>
           {data
             .filter((category) => category.id === activeCategory)
             .map((category) => (

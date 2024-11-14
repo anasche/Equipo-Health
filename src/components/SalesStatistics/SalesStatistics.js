@@ -15,7 +15,7 @@ import { firestore } from '../../firebase';
 // Register the components
 ChartJS?.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const SalesStatistics = () => {
+const SalesStatistics = ({data}) => {
     // Data for the chart
     // const data = {
     //     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
@@ -54,29 +54,29 @@ const SalesStatistics = () => {
         },
     };
 
-    const [data, setdata] = useState('')
+    // const [data, setdata] = useState('')
 
-    useEffect(() => {
-        const fetchBannerData = async () => {
-          try {
-            const docRef = doc(firestore, "charts", "salesChart");
-            const docSnap = await getDoc(docRef);
+    // useEffect(() => {
+    //     const fetchBannerData = async () => {
+    //       try {
+    //         const docRef = doc(firestore, "charts", "salesChart");
+    //         const docSnap = await getDoc(docRef);
 
     
-            if (docSnap.exists()) {
-                setdata(docSnap.data());
-            } else {
-              console.log("No such document!");
-            }
-          } catch (error) {
-            console.error("Error fetching banner data:", error);
-          }
-        };
+    //         if (docSnap.exists()) {
+    //             setdata(docSnap.data());
+    //         } else {
+    //           console.log("No such document!");
+    //         }
+    //       } catch (error) {
+    //         console.error("Error fetching banner data:", error);
+    //       }
+    //     };
     
-        fetchBannerData();
+    //     fetchBannerData();
     
-      }, []);
-      console.log(data,"hhhhhh")
+    //   }, []);
+      console.log(data,"saleStatistic")
 
     return (
         <div

@@ -2,11 +2,11 @@
 import React from "react";
 import style from "./TotalPartner.module.scss";
 
-function TotalPartner() {
+function TotalPartner({data}) {
   return (
     <div className={style.total_partner}>
       <h3>Total Partner</h3>
-      <p>50 thousands</p>
+      <p>{data?.count}</p>
     </div>
   );
 }

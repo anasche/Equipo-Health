@@ -2,13 +2,13 @@
 import React from "react";
 import style from "./RatingReview.module.scss";
 
-function RatingReview() {
+function RatingReview({data}) {
   return (
     <div className={style.ratingreview}>
       <h3>Rating Review</h3>
-      <p>Reviews of some of our app restaurant industry companies.</p>
+      <p>{data?.title}</p>
       <div className={style.review}>
-        <span>4.9</span> ★
+        <span>{data?.count}</span> ★
       </div>
     </div>
   );
