@@ -49,7 +49,7 @@ const EaseInHand = () => {
       <div className={`${styles.content} flex-1 `}>
         <h2 className="md:text-head2">{title}</h2>
         <p className="text-[18px] text-[#4D4E57]">{description}</p>
-
+        <div></div>
         <div className={styles.advantages}>
           {advantages.map((advantage, index) => (
             <div
