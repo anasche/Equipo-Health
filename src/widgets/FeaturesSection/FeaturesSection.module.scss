@@ -14,7 +14,6 @@ $border_color: #ccc;
 }
 .features_section {
   padding: 3rem 1rem;
-  background-color: $background_light;
 
   .features_heading {
     text-align: left;
@@ -31,19 +30,18 @@ $border_color: #ccc;
     .feature_item {
       display: flex;
       align-items: center;
-      background: $background_white;
+      flex-wrap: wrap;
+      background: #f8f9fd;
       padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       gap: 1.5rem;
-
+      border-radius: 30px;
 
       .feature_image {
         aspect-ratio: 468/332;
         position: relative;
         width: 45%;
-        border: 5px solid #000;
-        border-radius: 10px;
+        border: 8px solid #000;
+        border-radius: 20px;
         overflow: hidden;
         img {
           width: 100%;
@@ -107,7 +105,7 @@ $border_color: #ccc;
     }
   }
 }
-:global{
+:global {
   .ttl-64 {
     font-size: 30px;
     font-weight: 500;

@@ -1,11 +1,14 @@
 .ratingreview {
-    padding: 1rem;
-    background-color: #e6d6f9;
-    border-radius: 10px;
-  }
-  
-  .rating {
-    font-size: 2rem;
-    color: #ff6347;
-  }
-  
+  height: 100%;
+  padding: 1rem;
+  background-color: #e6d6f9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.rating {
+  font-size: 2rem;
+  color: #ff6347;
+}

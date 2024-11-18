@@ -1,1 +1,1 @@
-export {default} from "./EaseInHand"
+export { default } from "./easeInHand";

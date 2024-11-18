@@ -1,38 +1,51 @@
-// src/components/HeroSection.js
-import React, { useEffect, useState } from "react";
-import styles from  "./HeroFirstSection.module.scss";
-import { fetchDocument } from "../../services/firebaseService";
+import { Button } from "react-bootstrap";
+import { FaArrowCircleRight } from "react-icons/fa";
+import useWindowSize from "../../utils/useWindowSize";
 
+function HeroFirstSection({ data }) {
+  const { width } = useWindowSize();
 
-function HeroFirstSection({data}) {
-  // console.log(data,"hhhhhhrrrrr")
-  // const [bannerData, setBannerData] = useState(null);
-
-  // useEffect(() => {
-  //   const getBannerData = async () => {
-  //     try {
-  //       const data = await fetchDocument("homepage", "banner");
-  //       setBannerData(data);
-  //     } catch (error) {
-  //       console.error("Error fetching banner data:", error);
-  //     }
-  //   };
-
-  //   getBannerData();
-  // }, []);
-
-
-    return (
-    <section >
-    {data ?  <div >
-        <p>{data?.subtitle}</p>
-        <h1>{data?.title}</h1>
-        <button className={styles.ctabutton}>Get Started for Free →</button>
-      </div>: "loading.."}
+  return (
+    <div className="bg-black h-full text-white p-6 md:p-12 rounded-3xl overflow-hidden relative">
+      {data ? (
+        <div>
+          <div>
+            <p>{data?.subtitle}</p>
+            <h1 className="md:text-head2 ">{data?.title}</h1>
+            <Button
+              size={width < 768 ? "sm" : "lg"}
+              style={{
+                backgroundColor: "rgb(255, 92,0)",
+                border: "none",
+                borderRadius: "25px",
+                marginTop: "20px",
+              }}
+            >
+              <span className="flex items-center">
+                Get Started For Free
+                <span className="ml-2">
+                  <FaArrowCircleRight height={5} width={5} />
+                </span>
+              </span>
+            </Button>
+          </div>
+          {width > 768 ? (
+            <div>
+              <figure className="absolute left-0 w-full -bottom-35">
+                <img className="w-full" src="/hero/laptop.png" alt="laptop" />
+              </figure>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      ) : (
+        "loading.."
+      )}
       {/* <div >
         <img src="https://via.placeholder.com/500" alt="Tablet illustration" />
       </div> */}
-    </section>
+    </div>
   );
 }
 

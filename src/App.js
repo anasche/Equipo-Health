@@ -1,14 +1,16 @@
 // src/App.js
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "./customBootstrap.scss";
 
 import React from "react";
-import Header from "./components/header/Header";
+import Header from "./components/Header";
 import TrustedBySection from "./widgets/TrustedBySection";
 import FeaturesSection from "./widgets/FeaturesSection";
 import PricingTable from "./widgets/PricingTable";
 import HeroSection from "./widgets/HeroSection";
 import EaseInHand from "./widgets/EaseInHand";
 import FAQ from "./widgets/Faq";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <PricingTable />
       <EaseInHand />
       <FAQ />
+      <Footer />
     </div>
   );
 }

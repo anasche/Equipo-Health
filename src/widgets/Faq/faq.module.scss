@@ -1,93 +1,130 @@
 .faq-section {
-    padding: 2rem;
-  
-    .faq-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
+  background-color: #f8f9fd;
+  border-radius: 30px;
+
+  .faq-title {
+    font-weight: 500;
+    max-width: 640px;
+    width: 100%;
+  }
+
+  .faq-search {
+    display: flex;
+    max-width: 490px;
+    width: 100%;
+    margin-left: auto;
+    position: relative;
+
+    .faq-search-input {
+      border-radius: 58px !important;
     }
-  
-    .faq-search {
-      display: flex;
-  
-      .faq-search-input {
-        border-radius: 0.5rem;
-      }
-  
-      .faq-search-btn {
-        background-color: #ff7f50;
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-  
-        &:hover {
-          background-color: #e76f42;
-        }
-      }
-    }
-  
-    .faq-content {
-      display: flex;
-      gap: 2rem;
-  
-      .faq-categories {
-        flex: 1;
-  
-        .faq-category-btn {
-          display: block;
-          width: 100%;
-          padding: 0.75rem 1rem;
-          text-align: left;
-          border: none;
-          background: none;
-          border-radius: 0.5rem;
-          font-size: 1.2rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-  
-          &.active {
-            color: #ff7f50;
-            background-color: rgba(255, 127, 80, 0.1);
-          }
-  
-          &:hover {
-            background-color: rgba(255, 127, 80, 0.1);
-          }
-        }
-      }
-  
-      .faq-questions {
-        flex: 3;
-  
-        .accordion-item {
-          margin-bottom: 1rem;
-  
-          .accordion-header {
-            font-size: 1.25rem;
-            font-weight: bold;
-          }
-  
-          .accordion-body {
-            font-size: 1rem;
-            line-height: 1.5;
-          }
-        }
-      }
-    }
-  
-    .faq-loading {
-      text-align: center;
-      margin-top: 2rem;
-    }
-  
-    .faq-error {
-      text-align: center;
-  
-      .alert {
-        display: inline-block;
-        max-width: 500px;
+
+    .faq-search-btn {
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      position: absolute;
+      border-radius: 58px !important;
+
+      &:hover {
+        background-color: #e76f42;
       }
     }
   }
-  
+
+  .faq-content {
+    display: flex;
+    gap: 2rem;
+
+    .faq-categories {
+      flex: 1;
+
+      .faq-category-btn {
+        display: block;
+        margin: 12px 0px;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border: none;
+        border-radius: 58px;
+        background: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #4d4e57;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 99;
+
+        &.active {
+          color: #ff7f50;
+          border-radius: 58px;
+          border: 1px solid #ff7f50;
+          background: #fff;
+        }
+
+        &:hover {
+          background-color: rgba(255, 127, 80, 0.1);
+        }
+      }
+    }
+
+    .faq-questions {
+      flex: 3;
+      :global {
+        .accordion-item {
+          margin-bottom: 1rem;
+          border-bottom: 1px solid grey;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          background-color: transparent;
+          &:last-of-type {
+            border-radius: 0px;
+          }
+
+          .accordion-header {
+            .accordion-button {
+              font-size: 24px;
+              margin-bottom: 20px;
+              color: #ff7f50;
+              background-color: transparent;
+              &.collapsed {
+                color: #19191c;
+              }
+              &:focus {
+                box-shadow: none;
+              }
+            }
+            .accordion-button:not(.collapsed) {
+              box-shadow: none;
+            }
+          }
+
+          .accordion-body {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding-top: 0px;
+            font-size: 20px;
+            color: #4d4e57;
+          }
+        }
+      }
+    }
+  }
+
+  .faq-loading {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .faq-error {
+    text-align: center;
+
+    .alert {
+      display: inline-block;
+      max-width: 500px;
+    }
+  }
+}

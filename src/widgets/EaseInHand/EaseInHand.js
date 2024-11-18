@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./EaseInHand.module.scss";
+import styles from "./easeInHand.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
+import { FaGear } from "react-icons/fa6";
+import { BsShieldLockFill } from "react-icons/bs";
+import { RiBox3Fill } from "react-icons/ri";
+import { FaMoneyBill, FaServer } from "react-icons/fa";
+import { DiGoogleAnalytics } from "react-icons/di";
+
+const staticIcons = {
+  1: <FaGear className="w-full h-full" />,
+  2: <BsShieldLockFill className="w-full h-full" />,
+  3: <RiBox3Fill className="w-full h-full" />,
+  4: <FaServer className="w-full h-full" />,
+  5: <FaMoneyBill className="w-full h-full" />,
+  6: <DiGoogleAnalytics className="w-full h-full" />,
+};
 
 const EaseInHand = () => {
   const [data, setData] = useState([]);
@@ -29,25 +42,34 @@ const EaseInHand = () => {
 
   if (!data) {
     return <p>Loading...</p>; // Handle loading state
-
   }
 
   const { title, description, advantages, testimonials } = data;
 
   return (
-    <section className={styles["ease-in-the-hand"]}>
-      <div className={styles.content}>
-        <h2>{title}</h2>
-        <p>{description}</p>
+    <section
+      className={`${styles["ease-in-the-hand"]} p-8 md:px-[100px] flex flex-wrap md:space-x-14`}
+    >
+      <div className={`${styles.content} flex-1 `}>
+        <h2 className="md:text-head2">{title}</h2>
+        <p className="text-[18px] text-[#4D4E57]">{description}</p>
 
         <div className={styles.advantages}>
-          {advantages.map((advantage) => (
-            <div key={advantage.id} className={styles["advantage-item"]}>
-              <img
+          {advantages.map((advantage, index) => (
+            <div
+              key={advantage.id}
+              className={`${styles["advantage-item"]} md:p-6`}
+            >
+              {/* <img
                 src={advantage.icon}
                 alt={advantage.title}
                 className={styles["advantage-icon"]}
-              />
+              /> */}
+              <div className="mb-3 sm:text-center">
+                <div className="w-max p-4 bg-[#F8F9FD] rounded-full">
+                  <div className="md:h-8 md:w-8 ">{staticIcons[index + 1]}</div>
+                </div>
+              </div>
               <h4>{advantage.title}</h4>
               <p>{advantage.description}</p>
             </div>
@@ -55,23 +77,33 @@ const EaseInHand = () => {
         </div>
       </div>
 
-      <div className={styles.testimonials}>
+      <div className={`${styles.testimonials} flex-1`}>
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
             className={styles["testimonial-card"]}
-            style={{ backgroundColor: testimonial.backgroundColor }}
+            style={{
+              backgroundColor: testimonial.backgroundColor,
+              color: testimonial.textColor,
+            }}
           >
-            <p className={styles.quote}>{testimonial.quote}</p>
+            <p className={styles.quote}>"{testimonial.quote}"</p>
             <div className={styles.person}>
-              <img
-                src={testimonial.person.avatar}
-                alt={testimonial.person.name}
-                className={styles["person-avatar"]}
+              {/* {testimonial.person.avatar ? (
+                <img
+                  src={testimonial.person.avatar}
+                  alt={testimonial.person.name}
+                  className={styles["person-avatar"]}
+                />
+              ) : ( */}
+              <div
+                className="h-[50px] w-[50px] rounded-full"
+                style={{ backgroundColor: testimonial.textColor }}
               />
-              <div className={styles["person-info"]}>
+              {/* )} */}
+              <div className={`${styles["person-info"]} flex flex-col `}>
                 <h5>{testimonial.person.name}</h5>
-                <p>{testimonial.person.position}</p>
+                <span>{testimonial.person.position}</span>
               </div>
             </div>
           </div>
@@ -80,32 +112,5 @@ const EaseInHand = () => {
     </section>
   );
 };
-
-// EaseInHand.propTypes = {
-//   data: PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     advantages: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         title: PropTypes.string.isRequired,
-//         description: PropTypes.string.isRequired,
-//         icon: PropTypes.string.isRequired,
-//       })
-//     ).isRequired,
-//     testimonials: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         id: PropTypes.number.isRequired,
-//         quote: PropTypes.string.isRequired,
-//         person: PropTypes.shape({
-//           name: PropTypes.string.isRequired,
-//           position: PropTypes.string.isRequired,
-//           avatar: PropTypes.string.isRequired,
-//         }).isRequired,
-//         backgroundColor: PropTypes.string.isRequired,
-//       })
-//     ).isRequired,
-//   }),
-// };
 
 export default EaseInHand;

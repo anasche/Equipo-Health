@@ -1,6 +1,9 @@
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --section-padding: 140px:
@@ -13,6 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white !important;
 }
 
 code {
