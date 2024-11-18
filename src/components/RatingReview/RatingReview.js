@@ -1,6 +1,6 @@
 // src/components/RatingReview.js
 import React from "react";
-import style from "./ratingReview.module.scss";
+import style from "./RatingReview.module.scss";
 import { FaAward, FaStar } from "react-icons/fa6";
 
 function RatingReview({ data }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import style from "./pricingTable.module.scss";
+import style from "./PricingTable.module.scss";
 import { Table } from "react-bootstrap";
 import { features } from "./static";
 import { FaCheckCircle } from "react-icons/fa";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./easeInHand.module.scss";
+import styles from "./EaseInHand.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
 import { FaGear } from "react-icons/fa6";
 import { BsShieldLockFill } from "react-icons/bs";

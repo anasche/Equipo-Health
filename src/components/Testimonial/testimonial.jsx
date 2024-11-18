@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import style from "./testimonial.module.scss";
+import style from "./Testimonial.module.scss";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 function Testimonial({ data }) {
