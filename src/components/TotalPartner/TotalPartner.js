@@ -1,6 +1,6 @@
 // src/components/TotalPartner.js
 import React from "react";
-import style from "./totalPartner.module.scss";
+import style from "./TotalPartner.module.scss";
 import { MdPeopleAlt } from "react-icons/md";
 
 function TotalPartner({ data }) {

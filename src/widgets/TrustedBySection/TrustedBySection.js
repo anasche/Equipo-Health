@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from "./trustedBySection.module.scss";
+import style from "./TrustedBySection.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
 
 function TrustedBySection() {

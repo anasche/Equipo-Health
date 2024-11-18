@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from "./featuresSection.module.scss";
+import style from "./FeaturesSection.module.scss";
 import { fetchDocument } from "../../services/firebaseService";
-import { doc, setDoc } from "firebase/firestore";
-import { firestore } from "../../firebase";
 
 function FeaturesSection() {
   const [features, setFeatures] = useState([]);

@@ -1,9 +1,9 @@
 // src/components/HeroSection.js
 import React, { useEffect, useState } from "react";
-import HeroFirstSection from "../../components/HeroFirstSection/heroFirstSection";
+import HeroFirstSection from "../../components/HeroFirstSection/HeroFirstSection";
 import SalesStatistics from "../../components/SalesStatistics/salesStatistics";
-import RatingReview from "../../components/RatingReview/ratingReview";
-import TotalPartner from "../../components/TotalPartner/totalPartner";
+import RatingReview from "../../components/RatingReview/RatingReview";
+import TotalPartner from "../../components/TotalPartner/TotalPartner";
 import Testimonial from "../../components/Testimonial/testimonial";
 import { fetchDocument } from "../../services/firebaseService";
 
