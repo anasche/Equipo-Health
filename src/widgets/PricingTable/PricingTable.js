@@ -34,7 +34,7 @@ function PricingTable() {
     fetchFeaturesData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return "";
   if (error) return <div>{error}</div>;
 
   console.log(data, "plans");

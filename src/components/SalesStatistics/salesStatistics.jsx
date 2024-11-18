@@ -61,7 +61,9 @@ const SalesStatistics = ({ data }) => {
         </div>
         <span className="text-[16px] font-medium">Sales Statistics</span>
       </div>
-      <div>{data ? <Bar data={data} options={options} /> : "loading.."}</div>
+      <div>
+        <Bar data={data} options={options} />
+      </div>
     </div>
   );
 };

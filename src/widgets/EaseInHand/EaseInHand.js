@@ -37,12 +37,8 @@ const EaseInHand = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return "";
   if (error) return <div>{error}</div>;
-
-  if (!data) {
-    return <p>Loading...</p>; // Handle loading state
-  }
 
   const { title, description, advantages, testimonials } = data;
 

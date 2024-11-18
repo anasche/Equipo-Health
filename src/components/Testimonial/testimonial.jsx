@@ -1,4 +1,3 @@
-// src/components/Testimonial.js
 import React, { useCallback, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -21,7 +20,6 @@ function Testimonial({ data }) {
 
   return (
     <div className={style.testimonial}>
-      {/* <h2 className={style.testimonial_heading}>What Our Customers Say</h2> */}
       <Swiper
         modules={[Navigation, Autoplay]}
         ref={sliderRef}

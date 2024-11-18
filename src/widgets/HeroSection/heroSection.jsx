@@ -1,6 +1,5 @@
 // src/components/HeroSection.js
 import React, { useEffect, useState } from "react";
-import styles from "./heroSection.module.scss";
 import HeroFirstSection from "../../components/HeroFirstSection/heroFirstSection";
 import SalesStatistics from "../../components/SalesStatistics/salesStatistics";
 import RatingReview from "../../components/RatingReview/ratingReview";
@@ -29,7 +28,7 @@ function HeroSection() {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return "";
   if (error) return <div>{error}</div>;
 
   if (!data) {
